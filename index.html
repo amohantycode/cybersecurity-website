@@ -3,214 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Share Tech Mono', 'Segoe UI', monospace, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: radial-gradient(ellipse at 70% 30%, #0fffc3 0%, #0a1a2f 80%),
-                        linear-gradient(135deg, #232526 0%, #414345 100%);
-            background-blend-mode: screen, normal;
-            overflow: hidden;
-        }
-        .matrix {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .login-box {
-            padding: 54px 44px 38px 44px;
-            background: rgba(10, 26, 47, 0.98);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(0,255,195,0.18), 0 0 0 2px #0fffc3;
-            text-align: center;
-            min-width: 350px;
-            position: relative;
-            overflow: hidden;
-            z-index: 2;
-        }
-        .login-box::before {
-            content: '';
-            position: absolute;
-            top: -60px; left: -60px;
-            width: 120px; height: 120px;
-            background: linear-gradient(135deg, #0fffc3 0%, #232526 100%);
-            border-radius: 50%;
-            opacity: 0.13;
-            z-index: 0;
-        }
-        h2 {
-            margin-bottom: 18px;
-            color: #0fffc3;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 2.1rem;
-            text-shadow: 0 0 8px #0fffc3, 0 0 2px #fff;
-        }
-        .icon {
-            font-size: 2.7rem;
-            color: #0fffc3;
-            margin-bottom: 16px;
-            animation: pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
-            text-shadow: 0 0 12px #0fffc3, 0 0 2px #fff;
-        }
-        @keyframes pop {
-            0% { transform: scale(0.5); opacity: 0; }
-            80% { transform: scale(1.15); opacity: 1; }
-            100% { transform: scale(1); }
-        }
-        .cyber-warning {
-            color: #ff3860;
-            background: rgba(255,56,96,0.08);
-            border: 1.5px solid #ff3860;
-            border-radius: 6px;
-            padding: 10px 18px;
-            margin-bottom: 18px;
-            font-size: 1.05rem;
-            font-family: inherit;
-            box-shadow: 0 0 8px #ff3860a0;
-            animation: flicker 2.5s infinite alternate;
-        }
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-            60% { opacity: 0.9; }
-        }
-        form {
-            z-index: 1;
-            position: relative;
-        }
-        .input-group {
-            position: relative;
-            margin-bottom: 18px;
-        }
-        .input-group i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #0fffc3;
-            font-size: 1.1rem;
-            text-shadow: 0 0 6px #0fffc3;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px 12px 12px 38px;
-            margin: 0;
-            border: 1.5px solid #232526;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            background: #101c2c;
-            color: #0fffc3;
-            transition: border 0.2s, box-shadow 0.2s;
-            font-family: inherit;
-            box-shadow: 0 0 0 1.5px #0fffc3 inset;
-        }
-        input[type="text"]:focus, input[type="password"]:focus {
-            border: 1.5px solid #0fffc3;
-            outline: none;
-            background: #181f2b;
-            box-shadow: 0 0 8px #0fffc3;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(90deg, #0fffc3 0%, #232526 100%);
-            color: #101c2c;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 700;
-            box-shadow: 0 2px 12px #0fffc3a0;
-            transition: background 0.2s, transform 0.1s, color 0.2s;
-            letter-spacing: 1px;
-        }
-        input[type="submit"]:hover {
-            background: linear-gradient(90deg, #232526 0%, #0fffc3 100%);
-            color: #0fffc3;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 4px 18px #0fffc3b0;
-        }
-        .cyber-footer {
-            margin-top: 22px;
-            color: #fff;
-            font-size: 0.98rem;
-            opacity: 0.7;
-            letter-spacing: 1px;
-            text-shadow: 0 0 4px #0fffc3;
-        }
-        @media (max-width: 500px) {
-            .login-box { min-width: 90vw; padding: 32px 10vw; }
-        }
-    </style>
+    <title>MRHS Cybersecurity Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas class="matrix"></canvas>
-    <div class="login-box">
-        <div class="icon"><i class="fas fa-user-secret"></i></div>
-        <h2>Cybersecurity Club Demo</h2>
-        <div class="cyber-warning">
-            <i class="fas fa-exclamation-triangle"></i> <b>Warning:</b> No website is truly safe.<br>
-            This is a live demo. Never enter real credentials on untrusted sites!
-        </div>
-        <!-- Replace YOUR_FORMSPREE_URL with your actual Formspree endpoint -->
-        <form action="https://formspree.io/f/xgvlqeda" method="post">
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Username" required autocomplete="off">
+
+    <canvas id="backgroundCanvas"></canvas>
+
+    <header>
+        <nav>
+            <h1>MRHS Cybersecurity</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#meetings">Meetings</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <div class="hero-title-container">
+                    <img src="mrhslogo.png" alt="MRHS Cybersecurity Club Logo" class="club-logo-hero">
+                    <h2>Cybersecurity Club</h2>
+                </div>
+                <a href="#contact" class="cta-button">Join Our Discord</a>
             </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" required autocomplete="off">
+            <div class="wrapper">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
             </div>
-            <input type="submit" value="Log In">
-        </form>
-        <div class="cyber-footer">
-            <i class="fas fa-terminal"></i> Demo by Cybersecurity Club &mdash; <span id="year"></span>
-        </div>
-    </div>
-    <script>
-    // Matrix rain animation
-    const canvas = document.querySelector('.matrix');
-    const ctx = canvas.getContext('2d');
-    let w = window.innerWidth;
-    let h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-    let cols = Math.floor(w / 18);
-    let ypos = Array(cols).fill(0);
-    function matrix() {
-        ctx.fillStyle = 'rgba(16,28,44,0.13)';
-        ctx.fillRect(0, 0, w, h);
-        ctx.font = '16px Share Tech Mono, monospace';
-        ctx.fillStyle = '#0fffc3';
-        for (let i = 0; i < cols; i++) {
-            let text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            ctx.fillText(text, i * 18, ypos[i] * 18);
-            if (ypos[i] * 18 > h && Math.random() > 0.975) ypos[i] = 0;
-            else ypos[i]++;
-        }
-    }
-    setInterval(matrix, 50);
-    window.addEventListener('resize', () => {
-        w = window.innerWidth;
-        h = window.innerHeight;
-        canvas.width = w;
-        canvas.height = h;
-        cols = Math.floor(w / 18);
-        ypos = Array(cols).fill(0);
-    });
-    // Set year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>The MRHS Cybersecurity Club is dedicated to teaching students about cybersecurity.</p>
+        </section>
+
+        <section id="meetings">
+            <h2>Upcoming Meetings</h2>
+            <p class="meeting-details">Meetings are held every other Wednesday [Flex Time] in Ms Rossbach's room.</p>
+            <ul class="meeting-list">
+                <li><span class="date">[To Be Decided]</span> Intro to CyberSecurity</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Our Tech Stack</h2>
+            <p>Access our repository of tools and training data.</p>
+            <div class="resource-grid">
+                <a href="https://tryhackme.com" target="_blank" class="resource-card">
+                    <h3>TryHackMe</h3>
+                    <p>A hands-on platform to learn cyber skills.</p>
+                </a>
+                <a href="https://overthewire.org/wargames/" target="_blank" class="resource-card">
+                    <h3>OverTheWire</h3>
+                    <p>Learn command-line and security concepts through games.</p>
+                </a>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Command Center</h2>
+            <p>Have intel to share? Email us at <a href="mailto:mrhscybersec@gmail.com">mrhscybersec@gmail.com</a> or transmit via our Discord server.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>MRHS Cyber Club - 2025</p>
+    </footer>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>
