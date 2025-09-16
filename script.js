@@ -56,7 +56,7 @@ class Particle {
                 ctx.beginPath();
                 ctx.moveTo(this.x, this.y);
                 ctx.lineTo(mouse.x, mouse.y);
-                ctx.strokeStyle = `rgba(231, 76, 60, ${1 - distance / 100})`;
+                ctx.strokeStyle = `rgba(77, 194, 247, ${1 - distance / 100})`;
                 ctx.lineWidth = 1;
                 ctx.stroke();
             }
@@ -75,7 +75,7 @@ function createParticles() {
         let y = Math.random() * (canvas.height - size * 2) + size;
         let speedX = (Math.random() * 0.5) - 0.25;
         let speedY = (Math.random() * 0.5) - 0.25;
-        let color = 'rgba(231, 76, 60, 0.8)';
+        let color = 'rgba(77, 194, 247, 0.8)';
         particles.push(new Particle(x, y, size, color, speedX, speedY));
     }
 }
